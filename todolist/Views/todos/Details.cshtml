@@ -1,0 +1,28 @@
+﻿@model todolist.Models.todo
+
+<div>
+    <h4>todo</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.todo_title)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.todo_title)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.todo_content)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.todo_content)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

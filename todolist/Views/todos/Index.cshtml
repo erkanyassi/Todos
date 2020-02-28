@@ -1,0 +1,51 @@
+﻿@model IEnumerable<todolist.Models.todo>
+
+@{
+    ViewBag.Title = "Index";
+}
+<h1>INVEON</h1>
+<br />
+<h2>Todos</h2>
+ @{ 
+ 
+ }
+
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.todo_title)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.todo_content)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.date)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.todo_title)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.todo_content)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.date)
+    </td>
+    <td>
+        @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+        @Html.ActionLink("Details", "Details", new { id = item.id }) |
+        @Html.ActionLink("Delete", "Delete", new { id = item.id })
+    </td>
+</tr>
+    }
+
+</table>
